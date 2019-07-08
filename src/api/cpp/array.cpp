@@ -471,21 +471,33 @@ array::array_proxy &af::array::array_proxy::operator=(const array &other) {
         }
     }
 
-    af_array par_arr = nullptr;
+    af_array par_arr = 0;
 
+    dim4 dims = impl->parent_->dims();
     if (impl->is_linear_) {
         AF_THROW(af_flat(&par_arr, impl->parent_->get()));
+        // af_flat creates a new reference, remove the original reference
+        // in order to prevent triggering a memcpy in af_assign_gen when refCount > 1
+
+        af_array empty = 0;
+        impl->parent_->set(empty);
         nd = 1;
     } else {
         par_arr = impl->parent_->get();
     }
 
-    af_array tmp = nullptr;
+    af_array tmp = 0;
     AF_THROW(af_assign_gen(&tmp, par_arr, nd, impl->indices_, other_arr));
 
-    af_array res = nullptr;
+    af_array res = 0;
+    af_array unflattened = 0;
     if (impl->is_linear_) {
         AF_THROW(af_moddims(&res, tmp, this_dims.ndims(), this_dims.get()));
+        // Unflatten the af_array and reset the original reference
+        AF_THROW(af_moddims(&unflattened, par_arr, dims.ndims(), dims.get()));
+        impl->parent_->set(unflattened);
+        unflattened = 0;
+
         AF_THROW(af_release_array(par_arr));
         AF_THROW(af_release_array(tmp));
     } else {
