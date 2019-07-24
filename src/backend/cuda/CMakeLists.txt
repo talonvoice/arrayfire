@@ -175,7 +175,6 @@ cuda_add_library(afcuda
     exampleFunction.cu
     fast.cu
     fast_pyramid.cu
-    fftconvolve.cu
     gradient.cu
     harris.cu
     histogram.cu
@@ -245,7 +244,6 @@ cuda_add_library(afcuda
     kernel/fast.hpp
     kernel/fast_lut.hpp
     kernel/fast_pyramid.hpp
-    kernel/fftconvolve.hpp
     kernel/gradient.hpp
     kernel/harris.hpp
     kernel/histogram.hpp
@@ -329,8 +327,6 @@ cuda_add_library(afcuda
     copy.hpp
     cublas.cpp
     cublas.hpp
-    cufft.cpp
-    cufft.hpp
     cusolverDn.cpp
     cusolverDn.hpp
     cusparse.cpp
@@ -345,9 +341,6 @@ cuda_add_library(afcuda
     exampleFunction.hpp
     fast.hpp
     fast_pyramid.hpp
-    fft.cpp
-    fft.hpp
-    fftconvolve.hpp
     GraphicsResourceManager.cpp
     GraphicsResourceManager.hpp
     gradient.hpp

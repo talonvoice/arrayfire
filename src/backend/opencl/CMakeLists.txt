@@ -64,8 +64,6 @@ target_sources(afopencl
     cast.hpp
     cholesky.cpp
     cholesky.hpp
-    clfft.cpp
-    clfft.hpp
     complex.hpp
     convolve.cpp
     convolve.hpp
@@ -93,10 +91,6 @@ target_sources(afopencl
     exampleFunction.hpp
     fast.cpp
     fast.hpp
-    fft.cpp
-    fft.hpp
-    fftconvolve.cpp
-    fftconvolve.hpp
     GraphicsResourceManager.cpp
     GraphicsResourceManager.hpp
     gradient.cpp
@@ -262,7 +256,6 @@ target_sources(afopencl
     kernel/diff.hpp
     kernel/exampleFunction.hpp
     kernel/fast.hpp
-    kernel/fftconvolve.hpp
     kernel/gradient.hpp
     kernel/harris.hpp
     kernel/histogram.hpp
