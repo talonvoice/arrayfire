@@ -50,10 +50,6 @@ target_sources(afcpu
     exampleFunction.hpp
     fast.cpp
     fast.hpp
-    fft.cpp
-    fft.hpp
-    fftconvolve.cpp
-    fftconvolve.hpp
     flood_fill.hpp
     flood_fill.cpp
     gradient.cpp
@@ -208,7 +204,6 @@ target_sources(afcpu
     kernel/dot.hpp
     kernel/exampleFunction.hpp
     kernel/fast.hpp
-    kernel/fftconvolve.hpp
     kernel/flood_fill.hpp
     kernel/gradient.hpp
     kernel/harris.hpp
@@ -308,7 +303,7 @@ if(USE_CPU_MKL)
       Threads::Threads
     )
 else()
-  dependency_check(FFTW_FOUND "FFTW not found")
+    # dependency_check(FFTW_FOUND "FFTW not found")
   dependency_check(CBLAS_FOUND "CBLAS not found")
 
   target_link_libraries(afcpu
@@ -318,8 +313,8 @@ else()
       afcommon_interface
       cpu_sort_by_key
       ${CBLAS_LIBRARIES}
-      FFTW::FFTW
-      FFTW::FFTWF
+      # FFTW::FFTW
+      # FFTW::FFTWF
       Threads::Threads
     )
   if(LAPACK_FOUND)

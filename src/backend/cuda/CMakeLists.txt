@@ -307,8 +307,8 @@ cuda_add_library(afcuda
     kernel/exampleFunction.hpp
     kernel/fast.hpp
     kernel/fast_lut.hpp
-    kernel/fftconvolve.hpp
     kernel/flood_fill.hpp
+    kernel/fast_pyramid.hpp
     kernel/gradient.hpp
     kernel/harris.hpp
     kernel/histogram.hpp
@@ -405,8 +405,6 @@ cuda_add_library(afcuda
     cudnn.hpp
     cudnnModule.cpp
     cudnnModule.hpp
-    cufft.cpp
-    cufft.hpp
     cusolverDn.cpp
     cusolverDn.hpp
     cusparse.cpp
@@ -425,10 +423,6 @@ cuda_add_library(afcuda
     fast.hpp
     fast_pyramid.cpp
     fast_pyramid.hpp
-    fft.cpp
-    fft.hpp
-    fftconvolve.cpp
-    fftconvolve.hpp
     flood_fill.cpp
     flood_fill.hpp
     GraphicsResourceManager.cpp

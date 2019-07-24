@@ -80,9 +80,6 @@ target_sources(c_api_interface
     ${CMAKE_CURRENT_SOURCE_DIR}/fast.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/features.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/features.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fft.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fft_common.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fftconvolve.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/flip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/gaussian_kernel.cpp

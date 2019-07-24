@@ -12,7 +12,6 @@
 #include <common/err_common.hpp>
 #include <common/half.hpp>
 #include <convolve.hpp>
-#include <fftconvolve.hpp>
 #include <handle.hpp>
 #include <tile.hpp>
 
@@ -279,7 +278,7 @@ af_err af_convolve1(af_array *out, const af_array signal, const af_array filter,
                     const af_conv_mode mode, af_conv_domain domain) {
     try {
         if (isFreqDomain<1>(signal, filter, domain))
-            return af_fft_convolve1(out, signal, filter, mode);
+            abort();
 
         if (mode == AF_CONV_EXPAND)
             return convolve<1, true>(out, signal, filter);
@@ -298,7 +297,7 @@ af_err af_convolve2(af_array *out, const af_array signal, const af_array filter,
         }
 
         if (isFreqDomain<2>(signal, filter, domain))
-            return af_fft_convolve2(out, signal, filter, mode);
+            abort();
 
         if (mode == AF_CONV_EXPAND)
             return convolve<2, true>(out, signal, filter);
@@ -372,7 +371,7 @@ af_err af_convolve3(af_array *out, const af_array signal, const af_array filter,
         }
 
         if (isFreqDomain<3>(signal, filter, domain))
-            return af_fft_convolve3(out, signal, filter, mode);
+            abort();
 
         if (mode == AF_CONV_EXPAND)
             return convolve<3, true>(out, signal, filter);
