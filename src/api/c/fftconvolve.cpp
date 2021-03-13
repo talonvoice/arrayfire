@@ -120,12 +120,7 @@ template<typename T>
 inline af_array fftconvolve(const af_array &s, const af_array &f,
                             const bool expand, AF_BATCH_KIND kind,
                             const int baseDim) {
-    if (kind == AF_BATCH_DIFF) {
-        return fftconvolve_fallback<T>(s, f, expand, baseDim);
-    } else {
-        return getHandle(fftconvolve<T>(getArray<T>(s), castArray<T>(f), expand,
-                                        kind, baseDim));
-    }
+    return fftconvolve_fallback<T>(s, f, expand, baseDim);
 }
 
 AF_BATCH_KIND identifyBatchKind(const dim4 &sDims, const dim4 &fDims,

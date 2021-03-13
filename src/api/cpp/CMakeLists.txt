@@ -29,7 +29,6 @@ target_sources(cpp_api_interface
     ${CMAKE_CURRENT_SOURCE_DIR}/exception.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fast.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/features.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fft.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fftconvolve.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/gaussian_kernel.cpp
