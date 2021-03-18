@@ -5,7 +5,7 @@
 # The complete license agreement can be obtained at:
 # http://arrayfire.com/licenses/BSD-3-Clause
 
-find_package(Boost 1.66 REQUIRED)
+find_package(Boost 1.65 REQUIRED)
 
 set(Boost_MIN_VER 107000)
 set(Boost_MIN_VER_STR "1.70")
